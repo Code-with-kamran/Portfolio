@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "./static/css/main.507a3381.css",
-    "main.js": "./static/js/main.4ad82a5e.js",
-    "static/media/kamran.png": "./static/media/kamran.d9c789118f77923e5b30.png",
-    "index.html": "./index.html"
+    "main.css": "/Portfolio/static/css/main.507a3381.css",
+    "main.js": "/Portfolio/static/js/main.1a331fe4.js",
+    "static/media/kamran.png": "/Portfolio/static/media/kamran.d9c789118f77923e5b30.png",
+    "index.html": "/Portfolio/index.html"
   },
   "entrypoints": [
     "static/css/main.507a3381.css",
-    "static/js/main.4ad82a5e.js"
+    "static/js/main.1a331fe4.js"
   ]
 }
