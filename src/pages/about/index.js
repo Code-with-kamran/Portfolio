@@ -16,14 +16,12 @@ import {
 } from "../../content_option";
 gsap.registerPlugin(ScrollTrigger);
 export const About = () => {
+  const boxReff = useRef()
   useGSAP(()=>{
-    const tl = gsap.timeline(
+    gsap.fromTo("#left",
       {
         x:-1000,
-        trigger:'#left',
-        duration:1,
-        delay:2,
-        
+        duration:1
        
       },
       {
@@ -33,14 +31,14 @@ export const About = () => {
           trigger: '#left',
           start: 'top 65%',
           // end:'top -100%',// when the top of the element hits 80% of viewport
-           toggleActions: 'play reverse play reverse',
+           toggleActions: 'play none none   none',
           markers: false // change to true for visual debugging
         }
       }
     )
     gsap.fromTo("#right",
       {
-        x:1000,
+        x:10,
        
       },
       {
@@ -50,8 +48,7 @@ export const About = () => {
           trigger: '#left',
           start: 'top 80%',
           // end:'top 10%',// when the top of the element hits 80% of viewport
-           toggleActions: "play none play reverse",
-
+           toggleActions: 'play none play reverse',
           markers: true // change to true for visual debugging
         }
       }
