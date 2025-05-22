@@ -49,7 +49,7 @@ export const About = () => {
           start: 'top 80%',
           // end:'top 10%',// when the top of the element hits 80% of viewport
            toggleActions: 'play none play reverse',
-          markers: true // change to true for visual debugging
+          markers: false // change to true for visual debugging
         }
       }
     )
