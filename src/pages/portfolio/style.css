@@ -19,10 +19,13 @@
     transition: 0.3s ease;
     font-size: 0;
     min-height: 300px;
+    border-radius: 15px;
+    /* background: transparent; */
 }
 
 .po_item img {
     max-width: 100%;
+    border-radius: 15px;
 }
 
 .po_item .content {
