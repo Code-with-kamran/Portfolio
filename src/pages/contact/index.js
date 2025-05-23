@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import * as emailjs from "emailjs-com";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { meta } from "../../content_option";
 import { Container, Row, Col, Alert } from "react-bootstrap";
 import { contactConfig } from "../../content_option";
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const ContactUs = () => {
   const [formData, setFormdata] = useState({
@@ -17,9 +22,40 @@ export const ContactUs = () => {
     variant: "",
   });
 
+  // Refs for animation targets
+  const headerRef = useRef(null);
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    gsap.from(headerRef.current, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: headerRef.current,
+        start: "top 80%",
+        toggleActions: "play none play reverse",
+      },
+    });
+
+    gsap.from(formRef.current, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      delay: 0.3,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: formRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormdata({ loading: true });
+    setFormdata((prev) => ({ ...prev, loading: true }));
 
     const templateParams = {
       from_name: formData.email,
@@ -40,15 +76,19 @@ export const ContactUs = () => {
           console.log(result.text);
           setFormdata({
             loading: false,
-            alertmessage: "SUCCESS! ,Thankyou for your messege",
+            alertmessage: "SUCCESS! Thank you for your message",
             variant: "success",
             show: true,
+            email: "",
+            name: "",
+            message: "",
           });
         },
         (error) => {
           console.log(error.text);
           setFormdata({
-            alertmessage: `Faild to send!,${error.text}`,
+            loading: false,
+            alertmessage: `Failed to send! ${error.text}`,
             variant: "danger",
             show: true,
           });
@@ -72,21 +112,20 @@ export const ContactUs = () => {
           <title>{meta.title} | Contact</title>
           <meta name="description" content={meta.description} />
         </Helmet>
-        <Row className="mb-5 mt-3 pt-md-3">
+        <Row className="mb-5 mt-3 pt-md-3" ref={headerRef}>
           <Col lg="8">
             <h1 className="display-4 mb-4">Contact Me</h1>
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
-        <Row className="sec_sp">
+        <Row className="sec_sp" ref={formRef}>
           <Col lg="12">
             <Alert
-              //show={formData.show}
               variant={formData.variant}
               className={`rounded-0 co_alert ${
                 formData.show ? "d-block" : "d-none"
               }`}
-              onClose={() => setFormdata({ show: false })}
+              onClose={() => setFormdata((prev) => ({ ...prev, show: false }))}
               dismissible
             >
               <p className="my-0">{formData.alertmessage}</p>
@@ -101,12 +140,10 @@ export const ContactUs = () => {
               </a>
               <br />
               <br />
-              {contactConfig.hasOwnProperty("YOUR_FONE") ? (
+              {contactConfig.hasOwnProperty("YOUR_FONE") && (
                 <p>
                   <strong>Phone:</strong> {contactConfig.YOUR_FONE}
                 </p>
-              ) : (
-                ""
               )}
             </address>
             <p>{contactConfig.description}</p>
@@ -152,7 +189,7 @@ export const ContactUs = () => {
               <br />
               <Row>
                 <Col lg="12" className="form-group">
-                  <button className="btn ac_btn" type="submit">
+                  <button className="btn ac_btn" type="submit" disabled={formData.loading}>
                     {formData.loading ? "Sending..." : "Send"}
                   </button>
                 </Col>
