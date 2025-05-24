@@ -30,10 +30,10 @@ const Headermain = () => {
  
   return (
     <>
-      <header className="fixed-top site__header">
+      <header className="fixed-top site__header index">
         <div className="d-flex align-items-center justify-content-between">
           <Link  className="navbar-brand nav_ac" to="/" >
-            <img src={logo_url} alt="kamran" onClick={handler} />
+            <img className="index1" src={logo_url} alt="kamran" onClick={handler} />
           </Link>
           <div className="d-flex align-items-center">
           <Themetoggle />

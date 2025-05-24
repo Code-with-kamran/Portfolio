@@ -1,4 +1,5 @@
 .site__header {
+    
     top: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -6,6 +7,12 @@
    
 
     
+}
+.index1{
+    z-index:999;
+}
+.index{
+    z-index:99;
 }
 .site__header img{
     width: 50px; 

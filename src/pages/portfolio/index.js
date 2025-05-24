@@ -50,9 +50,9 @@ export const Portfolio = () => {
           {dataportfolio.map((data, i) => {
             return (
               <div
-              
-                key={i}
-                className="po_item"
+              key={i}
+              className="po_item"
+              ref={itemsRef.current}
                
               >
                 <img loading="lazy" src={data.img} alt="" />
