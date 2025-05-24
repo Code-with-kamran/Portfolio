@@ -29,19 +29,19 @@ export const ContactUs = () => {
   useEffect(() => {
     gsap.from(headerRef.current, {
       opacity: 0,
-      y: 50,
+      y: 100,
       duration: 1,
       ease: "power3.out",
       scrollTrigger: {
         trigger: headerRef.current,
-        start: "top 80%",
+        start: "top 10%",
         toggleActions: "play none play reverse",
       },
     });
 
     gsap.from(formRef.current, {
       opacity: 0,
-      y: 50,
+      y: 100,
       duration: 1,
       delay: 0.3,
       ease: "power3.out",
@@ -112,13 +112,13 @@ export const ContactUs = () => {
           <title>{meta.title} | Contact</title>
           <meta name="description" content={meta.description} />
         </Helmet>
-        <Row className="mb-5 mt-3 pt-md-3" ref={headerRef}>
+        <Row className="mb-5 mt-3 pt-md-3" ref={headerRef.current}>
           <Col lg="8">
             <h1 className="display-4 mb-4">Contact Me</h1>
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
-        <Row className="sec_sp" ref={formRef}>
+        <Row className="sec_sp" ref={formRef.current}>
           <Col lg="12">
             <Alert
               variant={formData.variant}

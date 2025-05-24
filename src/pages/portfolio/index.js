@@ -16,7 +16,7 @@ export const Portfolio = () => {
     itemsRef.current.forEach((el) => {
       gsap.fromTo(
         el,
-        { autoAlpha: 0, y: 50 },
+        { autoAlpha: 0, y: 100 },
         {
           duration: 1,
           autoAlpha: 1,
@@ -30,7 +30,7 @@ export const Portfolio = () => {
         }
       );
     });
-  }, []);
+  },);
 
   return (
     <HelmetProvider>
@@ -42,17 +42,18 @@ export const Portfolio = () => {
         </Helmet>
         <Row className="mb-5 mt-3 pt-md-3">
           <Col lg="8">
-            <h1 className="display-4 mb-4"> Portfolio </h1>
+            <h1 className="display-4 mb-4" > Portfolio </h1>
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
-        </Row>
-        <div className="mb-5 po_items_ho">
+        </Row >
+        <div className="mb-5 po_items_ho" ref={itemsRef.current}>
           {dataportfolio.map((data, i) => {
             return (
               <div
+              
                 key={i}
                 className="po_item"
-                ref={(el) => (itemsRef.current[i] = el)}
+               
               >
                 <img loading="lazy" src={data.img} alt="" />
                 <div className="content">
