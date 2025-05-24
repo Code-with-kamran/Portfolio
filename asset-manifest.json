@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.e2ed9ac7.css",
-    "main.js": "/Portfolio/static/js/main.afe0538a.js",
+    "main.css": "/Portfolio/static/css/main.b5a1f848.css",
+    "main.js": "/Portfolio/static/js/main.ac050e07.js",
     "static/media/kamran.png": "/Portfolio/static/media/kamran.d9c789118f77923e5b30.png",
     "static/media/logo.png": "/Portfolio/static/media/logo.2599d2a8bc45d072a836.png",
     "index.html": "/Portfolio/index.html"
   },
   "entrypoints": [
-    "static/css/main.e2ed9ac7.css",
-    "static/js/main.afe0538a.js"
+    "static/css/main.b5a1f848.css",
+    "static/js/main.ac050e07.js"
   ]
 }
