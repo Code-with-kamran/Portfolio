@@ -44,6 +44,7 @@ export const Home = () => {
           <meta charSet="utf-8" />
           <title> {meta.title}</title>
           <meta name="description" content={meta.description} />
+          <link rel="preload" as="image" href={introdata.your_img_url} />
         </Helmet>
         <div className="intro_sec d-block d-lg-flex align-items-center ">
           <div
