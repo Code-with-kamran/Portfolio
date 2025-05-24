@@ -35,10 +35,10 @@ export const Home = () => {
 }, []);
 
 
-  // const { userId } = useParams();
+  
   return (
     <HelmetProvider>
-      {console.log(userId)}
+      
       <section id="home" className="home">
         <Helmet>
           <meta charSet="utf-8" />

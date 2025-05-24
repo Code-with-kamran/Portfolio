@@ -25,7 +25,7 @@ export const Portfolio = () => {
           scrollTrigger: {
             trigger: el,
             start: "top 80%",
-            toggleActions: "play none play reverse",
+            toggleActions: "play none play none",
           },
         }
       );

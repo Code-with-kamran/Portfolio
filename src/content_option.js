@@ -1,8 +1,13 @@
 import imgurl from "./assets/images/kamran.png"
-import Klogo from "../src/assets/images/logo.png"
 
-// const logotext = "KAMRAN ";
-const logotext = Klogo;
+
+const logotext = "KAMRAN ";
+
+
+
+
+
+
 const meta = {
     title: "KAMRAN ",
     description: "I am Front-End REACT JS Developer  devloper,currently working in DYNSOF",
@@ -109,12 +114,12 @@ const dataportfolio = [
 const contactConfig = {
     YOUR_EMAIL: "nkamran045@gmail.com",
     YOUR_FONE: "+92 3220867157",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vehicula eu nunc et sollicitudin. Cras pulvinar, nisi at imperdiet pharetra. ",
+    description: " We'd love to hear from you! Please fill out the form below, and we'll get back to you as soon as possible.",
     // creat an emailjs.com account 
     // check out this tutorial https://www.emailjs.com/docs/examples/reactjs/
-    YOUR_SERVICE_ID: "service_id",
-    YOUR_TEMPLATE_ID: "template_id",
-    YOUR_USER_ID: "user_id",
+    YOUR_SERVICE_ID: "service_z1ki8vj",
+    YOUR_TEMPLATE_ID: "template_3h478g4",
+    YOUR_USER_ID: "bJZ3wLc1w0QgHDrki",
 };
 
 const socialprofils = {
@@ -124,6 +129,7 @@ const socialprofils = {
     // twitter: "https://twitter.com",
 };
 export {
+
     meta,
     dataabout,
     dataportfolio,
