@@ -12,7 +12,7 @@ import Themetoggle from "../components/themetoggle";
 function _ScrollToTop(props) {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({top:0 , behavior: "smooth"});
   }, [pathname]);
   return props.children;
 }

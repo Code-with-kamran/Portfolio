@@ -102,10 +102,11 @@ export const Home = () => {
             </div>
           </div>
         </div>
-      </section>
-      <About />
+        <About />
       <Portfolio />
       <ContactUs />
+      </section>
+      
     </HelmetProvider>
   );
 };

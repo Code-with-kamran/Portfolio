@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { logotext ,socialprofils } from "../content_option";
 import Themetoggle from "../components/themetoggle";
 import logo_url from '../assets/images/logo.png'
+import { useLocation } from "react-router-dom";
+
 
 
 
@@ -14,26 +16,24 @@ const Headermain = () => {
  
   
   const [isActive, setActive] = useState("false");
+  const location = useLocation()
 
   const handleToggle = () => {
     setActive(!isActive);
     document.body.classList.toggle("ovhidden");
    
   };
- 
+ const handler = (e)=>{
+  e.preventDefault()
+  window.scrollTo({ top: 0, behavior: "smooth" });
+ }
  
   return (
     <>
       <header className="fixed-top site__header">
         <div className="d-flex align-items-center justify-content-between">
-          <Link  className="navbar-brand nav_ac" to="/">
-          
-            <img src={logo_url} alt="kamran" />
-           
-         
-            
-            
-          
+          <Link  className="navbar-brand nav_ac" to="/" >
+            <img src={logo_url} alt="kamran" onClick={handler} />
           </Link>
           <div className="d-flex align-items-center">
           <Themetoggle />
